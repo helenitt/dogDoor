@@ -6,6 +6,7 @@ import java.util.TimerTask;
 public class Door {
     private boolean open;
     private Bark allowedBark;
+    private static final int TIMER_COUNT_DOWN = 5000;
 
     public Door() {
         this.open = false;
@@ -50,6 +51,6 @@ public class Door {
                 close();
                 timer.cancel();
             }
-        }, 5000);
+        }, TIMER_COUNT_DOWN);
     }
 }
