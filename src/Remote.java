@@ -4,6 +4,5 @@ public class Remote {
 
   public Remote(Door door) {
     this.door = door;
-    //door.toggleDoor();
   }
 }

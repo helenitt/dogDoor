@@ -5,9 +5,18 @@ import java.util.TimerTask;
  */
 public class Door {
     private boolean open;
+    private Bark allowedBark;
 
     public Door() {
         this.open = false;
+    }
+
+    public void setAllowedBark(Bark bark) {
+        this.allowedBark = bark;
+    }
+
+    public Bark getAllowedBark() {
+        return allowedBark;
     }
 
     public void open() {
@@ -30,11 +39,11 @@ public class Door {
             close();
         } else {
             open();
-            coutdownTimer();
+            coutDownTimer();
         }
     }
 
-    public void coutdownTimer() {
+    public void coutDownTimer() {
         final Timer timer = new Timer();
         timer.schedule(new TimerTask() {
             public void run() {

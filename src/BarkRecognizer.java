@@ -4,12 +4,16 @@
 public class BarkRecognizer {
     private Door door;
 
-    private BarkRecognizer(Door door) {
+    public BarkRecognizer(Door door) {
         this.door = door;
     }
-    public void recognize(String bark) {
-        System.out.println("BarkRecognizer: Heard a '" +
-                bark + "'");
-        door.open();
+
+    public void recognize(Bark bark) {
+        System.out.println("BarkRecognizer: Heard a '" + bark.getSound() + "'");
+        if(door.getAllowedBark().equals(bark)) {
+            door.open();
+        }
+        else
+            System.out.println("This dog is not allowed.");
     }
 }
