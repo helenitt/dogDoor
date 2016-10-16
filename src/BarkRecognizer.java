@@ -9,7 +9,7 @@ public class BarkRecognizer {
     }
     public void recognize(String bark) {
         System.out.println("BarkRecognizer: Heard a '" +
-                            bark + "'");
+                bark + "'");
         door.open();
     }
 }
